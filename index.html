@@ -3,127 +3,111 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prerna Kahaniyan</title>
+<title>Prerna Kahaniyan - 100 Motivational Stories</title>
 
 <style>
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:#f5f5f5;
-  color:#222;
+margin:0;
+font-family:Arial,sans-serif;
+background:#f5f5f5;
+color:#222;
 }
 
 header{
-  background:linear-gradient(135deg,#ff8a00,#ff3d00);
-  color:white;
-  text-align:center;
-  padding:30px 15px;
+background:linear-gradient(135deg,#ff8a00,#ff3d00);
+color:white;
+text-align:center;
+padding:30px 15px;
 }
 
 header h1{
-  margin:0;
-  font-size:30px;
+margin:0;
+font-size:30px;
 }
 
 header p{
-  margin:8px 0 0;
-  font-size:15px;
+margin:8px 0 0;
 }
 
 .search{
-  width:90%;
-  max-width:650px;
-  margin:20px auto 10px;
-  display:block;
-  padding:14px 18px;
-  border:1px solid #ddd;
-  border-radius:30px;
-  font-size:16px;
-  outline:none;
+width:90%;
+max-width:650px;
+margin:20px auto;
+display:block;
+padding:14px 18px;
+border:1px solid #ddd;
+border-radius:30px;
+font-size:16px;
 }
 
 .categories{
-  display:flex;
-  gap:10px;
-  justify-content:center;
-  flex-wrap:wrap;
-  padding:12px 10px 20px;
+display:flex;
+gap:10px;
+justify-content:center;
+flex-wrap:wrap;
+padding:0 10px 20px;
+background:white;
 }
 
 .categories button{
-  border:0;
-  border-radius:25px;
-  padding:11px 17px;
-  background:#ff6347;
-  color:white;
-  font-size:14px;
+border:0;
+border-radius:25px;
+padding:11px 16px;
+background:#ff6347;
+color:white;
+font-size:14px;
 }
 
 main{
-  max-width:900px;
-  margin:auto;
-  padding:10px 15px 35px;
+max-width:850px;
+margin:auto;
+padding:20px 15px;
 }
 
-.section-title{
-  text-align:center;
-  margin:15px 0 25px;
-  font-size:27px;
+.title{
+text-align:center;
+margin-bottom:25px;
 }
 
 .story{
-  background:white;
-  border-radius:20px;
-  padding:22px;
-  margin-bottom:20px;
-  box-shadow:0 5px 18px rgba(0,0,0,.08);
+background:white;
+border-radius:18px;
+padding:20px;
+margin-bottom:18px;
+box-shadow:0 4px 15px rgba(0,0,0,.08);
 }
 
 .tag{
-  display:inline-block;
-  background:#fff0cf;
-  border-radius:20px;
-  padding:7px 12px;
-  font-size:14px;
+display:inline-block;
+background:#fff0cf;
+padding:7px 12px;
+border-radius:20px;
 }
 
-.story h3{
-  color:#e4572e;
-  margin:12px 0;
-  font-size:22px;
+.story h2{
+color:#e4572e;
+font-size:22px;
 }
 
 .story p{
-  font-size:16px;
-  line-height:1.8;
-  margin:0 0 15px;
+font-size:16px;
+line-height:1.8;
 }
 
 .lesson{
-  background:#fff4d8;
-  border-radius:14px;
-  padding:13px;
-  font-weight:bold;
-  line-height:1.6;
-}
-
-.no-result{
-  text-align:center;
-  background:white;
-  border-radius:15px;
-  padding:25px;
-  display:none;
+background:#fff4d8;
+padding:13px;
+border-radius:12px;
+font-weight:bold;
 }
 
 footer{
-  background:#222;
-  color:white;
-  text-align:center;
-  padding:22px;
+background:#222;
+color:white;
+text-align:center;
+padding:25px;
 }
 </style>
 </head>
@@ -132,326 +116,56 @@ footer{
 
 <header>
 <h1>🌟 Prerna Kahaniyan</h1>
-<p>हर कहानी में छिपी है एक नई सीख</p>
+<p>100 प्रेरणादायक कहानियाँ • हर कहानी में एक नई सीख</p>
 </header>
 
 <input
-  id="search"
-  class="search"
-  type="search"
-  placeholder="🔎 कहानी खोजें..."
+class="search"
+id="search"
+type="search"
+placeholder="🔎 कहानी खोजें..."
 >
 
 <div class="categories">
-<button onclick="filterStories('all')">🏠 सभी</button>
-<button onclick="filterStories('मेहनत')">💪 मेहनत</button>
-<button onclick="filterStories('Students')">🎓 Students</button>
-<button onclick="filterStories('Life')">❤️ Life</button>
-<button onclick="filterStories('Confidence')">🔥 Confidence</button>
+
+<button onclick="filterStories('all')">
+🏠 सभी
+</button>
+
+<button onclick="filterStories('मेहनत')">
+💪 मेहनत
+</button>
+
+<button onclick="filterStories('Students')">
+🎓 Students
+</button>
+
+<button onclick="filterStories('Life')">
+❤️ Life
+</button>
+
+<button onclick="filterStories('Confidence')">
+🔥 Confidence
+</button>
+
 </div>
 
 <main>
 
-<h2 class="section-title">
-📖 Motivational Stories
-</h2>
+<h1 class="title">
+📖 100 Motivational Stories
+</h1>
 
 <div id="stories">
 
-<!-- STORY 1 -->
-<article class="story" data-category="मेहनत">
-<span class="tag">💪 मेहनत</span>
-<h3>हार मत मानो</h3>
-<p>
-एक लड़का बार-बार परीक्षा में असफल हो रहा था।
-उसने हार मानने के बजाय अपनी गलतियों को समझा और
-रोज थोड़ा-थोड़ा पढ़ना शुरू किया। कुछ महीनों बाद
-उसने शानदार सफलता हासिल की।
-</p>
-<div class="lesson">
-🌟 सीख: मेहनत और लगातार प्रयास से सफलता जरूर मिलती है।
-</div>
-</article>
+<!-- PART 2 KI STORIES YAHAN AAYENGI -->
 
-<!-- STORY 2 -->
-<article class="story" data-category="Life">
-<span class="tag">❤️ Life</span>
-<h3>खुशी का रहस्य</h3>
-<p>
-एक व्यक्ति हमेशा बड़ी चीजों में खुशी खोजता था।
-बाद में उसने छोटी-छोटी खुशियों की कद्र करना सीखा
-और उसका जीवन पहले से ज्यादा शांत और खुशहाल हो गया।
-</p>
-<div class="lesson">
-🌟 सीख: खुशी छोटी-छोटी चीजों में भी मिल सकती है।
 </div>
-</article>
 
-<!-- STORY 3 -->
-<article class="story" data-category="Confidence">
-<span class="tag">🔥 Confidence</span>
-<h3>मैं कर सकता हूँ</h3>
-<p>
-एक युवक हर सुबह खुद से कहता था,
-“मैं सीख सकता हूँ, मैं मेहनत कर सकता हूँ और
-मैं आगे बढ़ सकता हूँ।” धीरे-धीरे उसकी सोच बदली
-और उसके परिणाम भी बदलने लगे।
-</p>
-<div class="lesson">
-🌟 सीख: सकारात्मक सोच आपकी दिशा बदल सकती है।
-</div>
-</article>
-
-<!-- STORY 4 -->
-<article class="story" data-category="Students">
-<span class="tag">🎓 Students</span>
-<h3>छोटे कदम, बड़ी सफलता</h3>
-<p>
-एक विद्यार्थी पढ़ाई को बहुत कठिन समझता था।
-उसने रोज केवल एक घंटे पढ़ने का लक्ष्य बनाया।
-कुछ समय बाद उसकी आदत मजबूत हो गई और
-उसके अंकों में बहुत सुधार आया।
-</p>
-<div class="lesson">
-🌟 सीख: छोटे कदम लगातार उठाने से बड़ी सफलता मिलती है।
-</div>
-</article>
-
-<!-- STORY 5 -->
-<article class="story" data-category="मेहनत">
-<span class="tag">💪 मेहनत</span>
-<h3>किसान का सपना</h3>
-<p>
-एक किसान ने सूखी जमीन पर मेहनत से खेती शुरू की।
-पहली फसल अच्छी नहीं हुई, लेकिन उसने कोशिश नहीं छोड़ी।
-अगले मौसम में उसने नई तकनीक अपनाई और शानदार फसल उगाई।
-</p>
-<div class="lesson">
-🌟 सीख: असफलता रास्ता रोकती नहीं, रास्ता सिखाती है।
-</div>
-</article>
-
-<!-- STORY 6 -->
-<article class="story" data-category="Students">
-<span class="tag">🎓 Students</span>
-<h3>एक पन्ना रोज</h3>
-<p>
-एक छात्र को किताबें पढ़ना मुश्किल लगता था।
-उसने तय किया कि वह रोज केवल एक पन्ना पढ़ेगा।
-कुछ महीनों में उसने कई किताबें पूरी कर लीं
-और उसका ज्ञान बढ़ गया।
-</p>
-<div class="lesson">
-🌟 सीख: रोज की छोटी आदत बड़ा बदलाव लाती है।
-</div>
-</article>
-
-<!-- STORY 7 -->
-<article class="story" data-category="Life">
-<span class="tag">❤️ Life</span>
-<h3>समय की कीमत</h3>
-<p>
-रवि अपना समय बिना योजना के बिताता था।
-एक दिन उसने पूरे दिन के काम लिखने शुरू किए।
-धीरे-धीरे वह कम समय में ज्यादा काम करने लगा।
-</p>
-<div class="lesson">
-🌟 सीख: समय की सही कीमत समझना जीवन को बेहतर बनाता है।
-</div>
-</article>
-
-<!-- STORY 8 -->
-<article class="story" data-category="Confidence">
-<span class="tag">🔥 Confidence</span>
-<h3>पहला कदम</h3>
-<p>
-एक लड़की मंच पर बोलने से डरती थी।
-उसने रोज आईने के सामने बोलने का अभ्यास किया।
-कुछ दिनों बाद उसने स्कूल के कार्यक्रम में
-पूरे आत्मविश्वास से भाषण दिया।
-</p>
-<div class="lesson">
-🌟 सीख: डर कम करने का सबसे अच्छा तरीका अभ्यास है।
-</div>
-</article>
-
-<!-- STORY 9 -->
-<article class="story" data-category="मेहनत">
-<span class="tag">💪 मेहनत</span>
-<h3>मजदूर की लगन</h3>
-<p>
-एक मजदूर हर दिन ईमानदारी से काम करता था।
-उसने अपनी कमाई का थोड़ा हिस्सा बचाया और
-नई कला सीखने में लगाया। कुछ वर्षों बाद उसने
-अपना छोटा व्यवसाय शुरू कर लिया।
-</p>
-<div class="lesson">
-🌟 सीख: मेहनत के साथ सीखते रहना सफलता को मजबूत बनाता है।
-</div>
-</article>
-
-<!-- STORY 10 -->
-<article class="story" data-category="Life">
-<span class="tag">❤️ Life</span>
-<h3>अच्छे शब्द</h3>
-<p>
-एक बुजुर्ग व्यक्ति हर किसी से मुस्कुराकर बात करता था।
-उसके छोटे-छोटे अच्छे शब्द कई लोगों का दिन
-बेहतर बना देते थे।
-</p>
-<div class="lesson">
-🌟 सीख: अच्छे शब्द किसी के जीवन में खुशी ला सकते हैं।
-</div>
-</article>
-
-<!-- STORY 11 -->
-<article class="story" data-category="Students">
-<span class="tag">🎓 Students</span>
-<h3>गलती से सीख</h3>
-<p>
-एक छात्र गणित में बार-बार गलती करता था।
-उसने गलत सवालों की एक अलग कॉपी बनाई और
-रोज उन्हें दोहराया। कुछ ही समय में वही सवाल
-उसके लिए आसान हो गए।
-</p>
-<div class="lesson">
-🌟 सीख: गलती को शिक्षक बना लो।
-</div>
-</article>
-
-<!-- STORY 12 -->
-<article class="story" data-category="Confidence">
-<span class="tag">🔥 Confidence</span>
-<h3>अपनी तुलना खुद से</h3>
-<p>
-अमन हमेशा दूसरों से अपनी तुलना करता था।
-फिर उसने तय किया कि वह केवल अपने कल से
-बेहतर बनने की कोशिश करेगा। इससे उसका
-आत्मविश्वास बढ़ने लगा।
-</p>
-<div class="lesson">
-🌟 सीख: असली मुकाबला अपने पुराने रूप से है।
-</div>
-</article>
-
-<!-- STORY 13 -->
-<article class="story" data-category="मेहनत">
-<span class="tag">💪 मेहनत</span>
-<h3>पहाड़ और रास्ता</h3>
-<p>
-एक यात्री को सामने बड़ा पहाड़ देखकर डर लगा।
-उसने पहाड़ को एक साथ चढ़ने के बजाय छोटे-छोटे
-हिस्सों में रास्ता तय किया और आखिरकार शिखर तक पहुंच गया।
-</p>
-<div class="lesson">
-🌟 सीख: बड़ी मुश्किल को छोटे हिस्सों में बांट दो।
-</div>
-</article>
-
-<!-- STORY 14 -->
-<article class="story" data-category="Life">
-<span class="tag">❤️ Life</span>
-<h3>माफी की ताकत</h3>
-<p>
-दो दोस्तों में छोटी बात पर झगड़ा हो गया।
-दोनों कई दिनों तक दुखी रहे। आखिर एक ने पहल करके
-माफी मांगी और दोस्ती फिर से मजबूत हो गई।
-</p>
-<div class="lesson">
-🌟 सीख: माफी रिश्तों को फिर से जोड़ सकती है।
-</div>
-</article>
-
-<!-- STORY 15 -->
-<article class="story" data-category="Students">
-<span class="tag">🎓 Students</span>
-<h3>मोबाइल से दूरी</h3>
-<p>
-एक छात्र पढ़ते समय बार-बार मोबाइल देखता था।
-उसने पढ़ाई के समय मोबाइल दूर रखना शुरू किया।
-उसका ध्यान बेहतर हुआ और पढ़ाई जल्दी पूरी होने लगी।
-</p>
-<div class="lesson">
-🌟 सीख: ध्यान बचाओ, समय और सफलता दोनों बचेंगे।
-</div>
-</article>
-
-<!-- STORY 16 -->
-<article class="story" data-category="Confidence">
-<span class="tag">🔥 Confidence</span>
-<h3>एक असफल इंटरव्यू</h3>
-<p>
-सीमा का पहला इंटरव्यू अच्छा नहीं गया।
-उसने निराश होने के बजाय अपनी कमियां लिखीं
-और अभ्यास किया। अगले इंटरव्यू में उसने
-आत्मविश्वास से जवाब दिए।
-</p>
-<div class="lesson">
-🌟 सीख: एक असफल प्रयास आपकी पूरी कहानी नहीं है।
-</div>
-</article>
-
-<!-- STORY 17 -->
-<article class="story" data-category="Life">
-<span class="tag">❤️ Life</span>
-<h3>पेड़ का धैर्य</h3>
-<p>
-एक बीज को पेड़ बनने में समय लगता है।
-वह तुरंत फल नहीं देता, लेकिन रोज थोड़ा बढ़ता है।
-इंसान की मेहनत भी ऐसी ही होती है।
-</p>
-<div class="lesson">
-🌟 सीख: अच्छे परिणामों के लिए धैर्य जरूरी है।
-</div>
-</article>
-
-<!-- STORY 18 -->
-<article class="story" data-category="मेहनत">
-<span class="tag">💪 मेहनत</span>
-<h3>बारिश के बाद सूरज</h3>
-<p>
-एक खिलाड़ी चोट के कारण कई महीनों तक खेल नहीं सका।
-उसने आराम के साथ अभ्यास और फिटनेस पर काम किया।
-वापसी के बाद उसने पहले से बेहतर प्रदर्शन किया।
-</p>
-<div class="lesson">
-🌟 सीख: कठिन समय हमेशा के लिए नहीं रहता।
-</div>
-</article>
-
-<!-- STORY 19 -->
-<article class="story" data-category="Students">
-<span class="tag">🎓 Students</span>
-<h3>लक्ष्य की डायरी</h3>
-<p>
-एक छात्र ने अपनी पढ़ाई के छोटे-छोटे लक्ष्य
-डायरी में लिखने शुरू किए। हर पूरा हुआ लक्ष्य
-उसे आगे बढ़ने की प्रेरणा देता था।
-</p>
-<div class="lesson">
-🌟 सीख: लक्ष्य लिखने से उन्हें पूरा करने की संभावना बढ़ती है।
-</div>
-</article>
-
-<!-- STORY 20 -->
-<article class="story" data-category="Confidence">
-<span class="tag">🔥 Confidence</span>
-<h3>अपनी आवाज पर भरोसा</h3>
-<p>
-एक लड़की को लगता था कि उसकी राय महत्वपूर्ण नहीं है।
-उसने धीरे-धीरे अपनी बात स्पष्ट रूप से रखना शुरू किया।
-लोगों ने उसकी सोच को सम्मान देना शुरू कर दिया।
-</p>
-<div class="lesson">
-🌟 सीख: अपनी बात पर विश्वास रखो।
-</div>
-</article>
-
-<div id="noResult" class="no-result">
+<div id="noResult" style="display:none;text-align:center;">
 😔 कोई कहानी नहीं मिली।
 </div>
 
-</div>
 </main>
 
 <footer>
@@ -460,58 +174,56 @@ footer{
 
 <script>
 
-const stories = document.querySelectorAll(".story");
-const search = document.getElementById("search");
-const noResult = document.getElementById("noResult");
+const stories=document.querySelectorAll(".story");
+
+const search=document.getElementById("search");
+
+let currentCategory="all";
 
 function filterStories(category){
 
-  let visible = 0;
+currentCategory=category;
 
-  stories.forEach(function(story){
+search.value="";
 
-    const match =
-      category === "all" ||
-      story.dataset.category === category;
+showStories();
 
-    story.style.display = match ? "block" : "none";
-
-    if(match){
-      visible++;
-    }
-
-  });
-
-  noResult.style.display =
-    visible === 0 ? "block" : "none";
-
-  search.value = "";
 }
 
-search.addEventListener("input", function(){
+function showStories(){
 
-  const text = this.value.toLowerCase().trim();
+let text=search.value.toLowerCase();
 
-  let visible = 0;
+let count=0;
 
-  stories.forEach(function(story){
+document.querySelectorAll(".story").forEach(function(story){
 
-    const match =
-      story.innerText.toLowerCase().includes(text);
+let categoryOK=
+currentCategory==="all" ||
+story.dataset.category===currentCategory;
 
-    story.style.display =
-      match ? "block" : "none";
+let searchOK=
+story.innerText.toLowerCase().includes(text);
 
-    if(match){
-      visible++;
-    }
+if(categoryOK && searchOK){
 
-  });
+story.style.display="block";
+count++;
 
-  noResult.style.display =
-    visible === 0 ? "block" : "none";
+}else{
+
+story.style.display="none";
+
+}
 
 });
+
+document.getElementById("noResult").style.display=
+count===0 ? "block" : "none";
+
+}
+
+search.addEventListener("input",showStories);
 
 </script>
 
