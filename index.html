@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Prerna Kahaniyan</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f5f5f5;
+  color:#222;
+}
+
+header{
+  background:linear-gradient(135deg,#ff7a00,#ff3d00);
+  color:white;
+  text-align:center;
+  padding:35px 15px;
+}
+
+header h1{
+  margin:0;
+  font-size:42px;
+}
+
+header p{
+  font-size:20px;
+  margin:18px 0 0;
+}
+
+.search-area{
+  background:white;
+  padding:38px 20px 25px;
+  text-align:center;
+}
+
+.search-box{
+  width:90%;
+  max-width:570px;
+  padding:18px 25px;
+  border:2px solid #ddd;
+  border-radius:40px;
+  font-size:20px;
+  outline:none;
+}
+
+.categories{
+  display:flex;
+  gap:18px;
+  overflow-x:auto;
+  padding:25px 28px;
+  background:white;
+}
+
+.category{
+  border:0;
+  background:#ff6844;
+  color:white;
+  padding:14px 28px;
+  border-radius:35px;
+  font-size:20px;
+  white-space:nowrap;
+  cursor:pointer;
+}
+
+.category:hover{
+  background:#ff3d00;
+}
+
+main{
+  max-width:900px;
+  margin:auto;
+  padding:35px 18px;
+}
+
+.section-title{
+  text-align:center;
+  font-size:38px;
+  margin:0 0 35px;
+}
+
+.story{
+  background:white;
+  border-radius:30px;
+  padding:28px;
+  margin-bottom:30px;
+  box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.tag{
+  display:inline-block;
+  background:#ffe6b8;
+  padding:10px 20px;
+  border-radius:25px;
+  font-size:18px;
+}
+
+.story h2{
+  color:#e9542b;
+  font-size:30px;
+  margin:10px 0 25px;
+}
+
+.story p{
+  font-size:21px;
+  line-height:1.9;
+  margin:0;
+}
+
+.lesson{
+  margin-top:25px;
+  background:#fff3df;
+  padding:20px 25px;
+  border-radius:20px;
+  font-size:20px;
+  font-weight:bold;
+}
+
+.no-result{
+  display:none;
+  text-align:center;
+  font-size:22px;
+  padding:30px;
+}
+
+footer{
+  background:#222;
+  color:white;
+  text-align:center;
+  padding:45px 15px;
+  font-size:20px;
+}
+
+@media(max-width:600px){
+  header h1{
+    font-size:34px;
+  }
+
+  header p{
+    font-size:18px;
+  }
+
+  .section-title{
+    font-size:30px;
+  }
+
+  .story{
+    padding:25px;
+  }
+
+  .story h2{
+    font-size:27px;
+  }
+
+  .story p{
+    font-size:19px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🌟 Prerna Kahaniyan</h1>
+  <p>हर कहानी में छिपी है एक नई सीख</p>
+</header>
+
+<div class="search-area">
+  <input
+    id="searchBox"
+    class="search-box"
+    type="text"
+    placeholder="🔎 कहानी खोजें..."
+    onkeyup="searchStories()"
+  >
+</div>
+
+<div class="categories">
+
+  <button class="category" onclick="filterStories('all')">
+    🏠 सभी
+  </button>
+
+  <button class="category" onclick="filterStories('मेहनत')">
+    💪 मेहनत
+  </button>
+
+  <button class="category" onclick="filterStories('Students')">
+    🎓 Students
+  </button>
+
+  <button class="category" onclick="filterStories('Life')">
+    🌟 Life
+  </button>
+
+  <button class="category" onclick="filterStories('Confidence')">
+    🔥 Confidence
+  </button>
+
+</div>
+
+<main>
+
+<h1 class="section-title">📖 Motivational Stories</h1>
+
+<div id="noResult" class="no-result">
+  😔 कोई कहानी नहीं मिली।
+</div>
+
+<div id="stories">
+
+  <article class="story" data-category="मेहनत">
+
+    <span class="tag">💪 मेहनत</span>
+
+    <h2>हार मत मानो</h2>
+
+    <p>
+      एक लड़का बार-बार परीक्षा में असफल हो रहा था।
+      उसने हार मानने के बजाय अपनी गलतियों को समझा
+      और रोज थोड़ा-थोड़ा मेहनत करना शुरू किया।
+      कुछ महीनों बाद उसने शानदार सफलता हासिल की।
+    </p>
+
+    <div class="lesson">
+      🌟 सीख: मेहनत और लगातार प्रयास से सफलता जरूर मिलती है।
+    </div>
+
+  </article>
+
+
+  <article class="story" data-category="Life">
+
+    <span class="tag">❤️ Life</span>
+
+    <h2>खुशी का रहस्य</h2>
+
+    <p>
+      एक व्यक्ति हमेशा बड़ी चीजों में खुशी खोजता था।
+      बाद में उसने छोटी-छोटी खुशियों की कद्र करना सीखा
+      और उसका जीवन ज्यादा शांत और खुशहाल हो गया।
+    </p>
+
+    <div class="lesson">
+      🌟 सीख: खुशी छोटी-छोटी चीजों में भी मिल सकती है।
+    </div>
+
+  </article>
+
+
+  <article class="story" data-category="Confidence">
+
+    <span class="tag">🔥 Confidence</span>
+
+    <h2>मैं कर सकता हूँ</h2>
+
+    <p>
+      एक युवक ने हर सुबह खुद से कहा,
+      “मैं सीख सकता हूँ, मैं मेहनत कर सकता हूँ
+      और मैं आगे बढ़ सकता हूँ।”
+      धीरे-धीरे उसकी सोच बदली और उसके परिणाम भी बदलने लगे।
+    </p>
+
+    <div class="lesson">
+      🌟 सीख: सकारात्मक सोच आपकी दिशा बदल सकती है।
+    </div>
+
+  </article>
+
+
+  <article class="story" data-category="Students">
+
+    <span class="tag">🎓 Students</span>
+
+    <h2>छोटे कदम, बड़ी सफलता</h2>
+
+    <p>
+      एक विद्यार्थी पढ़ाई को बहुत कठिन समझता था।
+      उसने रोज केवल एक घंटे पढ़ने का लक्ष्य बनाया।
+      कुछ समय बाद उसकी आदत मजबूत हो गई और
+      उसके अंकों में भी बहुत सुधार आया।
+    </p>
+
+    <div class="lesson">
+      🌟 सीख: छोटे कदम लगातार उठाते रहें, बड़ी सफलता जरूर मिलेगी।
+    </div>
+
+  </article>
+
+
+  <article class="story" data-category="मेहनत">
+
+    <span class="tag">💪 मेहनत</span>
+
+    <h2>सफलता का रास्ता</h2>
+
+    <p>
+      एक गरीब लड़का अपने सपने को पूरा करना चाहता था।
+      उसके पास ज्यादा साधन नहीं थे, लेकिन उसने मेहनत
+      करना नहीं छोड़ा। हर दिन वह कुछ नया सीखता रहा।
+      आखिरकार उसकी मेहनत रंग लाई।
+    </p>
+
+    <div class="lesson">
+      🌟 सीख: साधन कम हों तो भी मेहनत और सीखना बंद नहीं करना चाहिए।
+    </div>
+
+  </article>
+
+
+  <article class="story" data-category="Life">
+
+    <span class="tag">🌈 Life</span>
+
+    <h2>मुश्किल समय</h2>
+
+    <p>
+      जीवन में एक व्यक्ति के सामने कई परेशानियां आईं।
+      उसने हर समस्या को एक सीख की तरह देखा।
+      समय के साथ वही मुश्किलें उसकी ताकत बन गईं।
+    </p>
+
+    <div class="lesson">
+      🌟 सीख: मुश्किल समय हमें मजबूत बनाता है।
+    </div>
+
+  </article>
+
+
+  <article class="story" data-category="Confidence">
+
+    <span class="tag">🔥 Confidence</span>
+
+    <h2>खुद पर विश्वास</h2>
+
+    <p>
+      एक लड़का दूसरों से अपनी तुलना करके हमेशा निराश रहता था।
+      एक दिन उसने तय किया कि वह अपनी प्रगति पर ध्यान देगा।
+      धीरे-धीरे उसका आत्मविश्वास बढ़ने लगा।
+    </p>
+
+    <div class="lesson">
+      🌟 सीख: खुद पर विश्वास रखें और अपनी यात्रा पर ध्यान दें।
+    </div>
+
+  </article>
+
+</div>
+
+</main>
+
+<footer>
+  © 2026 Prerna Kahaniyan ❤️
+</footer>
+
+
+<script>
+
+function filterStories(category){
+
+  let stories = document.querySelectorAll(".story");
+  let visible = 0;
+
+  stories.forEach(function(story){
+
+    if(category === "all" ||
+       story.dataset.category === category){
+
+      story.style.display = "block";
+      visible++;
+
+    }else{
+
+      story.style.display = "none";
+
+    }
+
+  });
+
+  document.getElementById("noResult").style.display =
+    visible === 0 ? "block" : "none";
+
+  document.getElementById("searchBox").value = "";
+
+}
+
+
+function searchStories(){
+
+  let search =
+    document.getElementById("searchBox")
+    .value
+    .toLowerCase()
+    .trim();
+
+  let stories = document.querySelectorAll(".story");
+  let visible = 0;
+
+  stories.forEach(function(story){
+
+    let text =
+      story.innerText.toLowerCase();
+
+    if(text.includes(search)){
+
+      story.style.display = "block";
+      visible++;
+
+    }else{
+
+      story.style.display = "none";
+
+    }
+
+  });
+
+  document.getElementById("noResult").style.display =
+    visible === 0 ? "block" : "none";
+
+}
+
+</script>
+
+</body>
+</html>
