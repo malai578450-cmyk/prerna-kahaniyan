@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Prerna Kahaniyan</title>
 
 <style>
@@ -19,149 +18,112 @@ body{
 }
 
 header{
-  background:linear-gradient(135deg,#ff7a00,#ff3d00);
+  background:linear-gradient(135deg,#ff8a00,#ff3d00);
   color:white;
   text-align:center;
-  padding:35px 15px;
+  padding:30px 15px;
 }
 
 header h1{
   margin:0;
-  font-size:42px;
+  font-size:30px;
 }
 
 header p{
-  font-size:20px;
-  margin:18px 0 0;
+  margin:8px 0 0;
+  font-size:15px;
 }
 
-.search-area{
-  background:white;
-  padding:38px 20px 25px;
-  text-align:center;
-}
-
-.search-box{
+.search{
   width:90%;
-  max-width:570px;
-  padding:18px 25px;
-  border:2px solid #ddd;
-  border-radius:40px;
-  font-size:20px;
+  max-width:650px;
+  margin:20px auto 10px;
+  display:block;
+  padding:14px 18px;
+  border:1px solid #ddd;
+  border-radius:30px;
+  font-size:16px;
   outline:none;
 }
 
 .categories{
   display:flex;
-  gap:18px;
-  overflow-x:auto;
-  padding:25px 28px;
-  background:white;
+  gap:10px;
+  justify-content:center;
+  flex-wrap:wrap;
+  padding:12px 10px 20px;
 }
 
-.category{
+.categories button{
   border:0;
-  background:#ff6844;
+  border-radius:25px;
+  padding:11px 17px;
+  background:#ff6347;
   color:white;
-  padding:14px 28px;
-  border-radius:35px;
-  font-size:20px;
-  white-space:nowrap;
-  cursor:pointer;
-}
-
-.category:hover{
-  background:#ff3d00;
+  font-size:14px;
 }
 
 main{
   max-width:900px;
   margin:auto;
-  padding:35px 18px;
+  padding:10px 15px 35px;
 }
 
 .section-title{
   text-align:center;
-  font-size:38px;
-  margin:0 0 35px;
+  margin:15px 0 25px;
+  font-size:27px;
 }
 
 .story{
   background:white;
-  border-radius:30px;
-  padding:28px;
-  margin-bottom:30px;
-  box-shadow:0 8px 25px rgba(0,0,0,.08);
+  border-radius:20px;
+  padding:22px;
+  margin-bottom:20px;
+  box-shadow:0 5px 18px rgba(0,0,0,.08);
 }
 
 .tag{
   display:inline-block;
-  background:#ffe6b8;
-  padding:10px 20px;
-  border-radius:25px;
-  font-size:18px;
+  background:#fff0cf;
+  border-radius:20px;
+  padding:7px 12px;
+  font-size:14px;
 }
 
-.story h2{
-  color:#e9542b;
-  font-size:30px;
-  margin:10px 0 25px;
+.story h3{
+  color:#e4572e;
+  margin:12px 0;
+  font-size:22px;
 }
 
 .story p{
-  font-size:21px;
-  line-height:1.9;
-  margin:0;
+  font-size:16px;
+  line-height:1.8;
+  margin:0 0 15px;
 }
 
 .lesson{
-  margin-top:25px;
-  background:#fff3df;
-  padding:20px 25px;
-  border-radius:20px;
-  font-size:20px;
+  background:#fff4d8;
+  border-radius:14px;
+  padding:13px;
   font-weight:bold;
+  line-height:1.6;
 }
 
 .no-result{
-  display:none;
   text-align:center;
-  font-size:22px;
-  padding:30px;
+  background:white;
+  border-radius:15px;
+  padding:25px;
+  display:none;
 }
 
 footer{
   background:#222;
   color:white;
   text-align:center;
-  padding:45px 15px;
-  font-size:20px;
-}
-
-@media(max-width:600px){
-  header h1{
-    font-size:34px;
-  }
-
-  header p{
-    font-size:18px;
-  }
-
-  .section-title{
-    font-size:30px;
-  }
-
-  .story{
-    padding:25px;
-  }
-
-  .story h2{
-    font-size:27px;
-  }
-
-  .story p{
-    font-size:19px;
-  }
+  padding:22px;
 }
 </style>
 </head>
@@ -169,395 +131,387 @@ footer{
 <body>
 
 <header>
-  <h1>🌟 Prerna Kahaniyan</h1>
-  <p>हर कहानी में छिपी है एक नई सीख</p>
+<h1>🌟 Prerna Kahaniyan</h1>
+<p>हर कहानी में छिपी है एक नई सीख</p>
 </header>
 
-<div class="search-area">
-  <input
-    id="searchBox"
-    class="search-box"
-    type="text"
-    placeholder="🔎 कहानी खोजें..."
-    onkeyup="searchStories()"
-  >
-</div>
+<input
+  id="search"
+  class="search"
+  type="search"
+  placeholder="🔎 कहानी खोजें..."
+>
 
 <div class="categories">
-
-  <button class="category" onclick="filterStories('all')">
-    🏠 सभी
-  </button>
-
-  <button class="category" onclick="filterStories('मेहनत')">
-    💪 मेहनत
-  </button>
-
-  <button class="category" onclick="filterStories('Students')">
-    🎓 Students
-  </button>
-
-  <button class="category" onclick="filterStories('Life')">
-    🌟 Life
-  </button>
-
-  <button class="category" onclick="filterStories('Confidence')">
-    🔥 Confidence
-  </button>
-
+<button onclick="filterStories('all')">🏠 सभी</button>
+<button onclick="filterStories('मेहनत')">💪 मेहनत</button>
+<button onclick="filterStories('Students')">🎓 Students</button>
+<button onclick="filterStories('Life')">❤️ Life</button>
+<button onclick="filterStories('Confidence')">🔥 Confidence</button>
 </div>
 
 <main>
 
-<h1 class="section-title">📖 Motivational Stories</h1>
-
-<div id="noResult" class="no-result">
-  😔 कोई कहानी नहीं मिली।
-</div>
+<h2 class="section-title">
+📖 Motivational Stories
+</h2>
 
 <div id="stories">
 
-  <article class="story" data-category="मेहनत">
+<!-- STORY 1 -->
+<article class="story" data-category="मेहनत">
+<span class="tag">💪 मेहनत</span>
+<h3>हार मत मानो</h3>
+<p>
+एक लड़का बार-बार परीक्षा में असफल हो रहा था।
+उसने हार मानने के बजाय अपनी गलतियों को समझा और
+रोज थोड़ा-थोड़ा पढ़ना शुरू किया। कुछ महीनों बाद
+उसने शानदार सफलता हासिल की।
+</p>
+<div class="lesson">
+🌟 सीख: मेहनत और लगातार प्रयास से सफलता जरूर मिलती है।
+</div>
+</article>
 
-    <span class="tag">💪 मेहनत</span>
+<!-- STORY 2 -->
+<article class="story" data-category="Life">
+<span class="tag">❤️ Life</span>
+<h3>खुशी का रहस्य</h3>
+<p>
+एक व्यक्ति हमेशा बड़ी चीजों में खुशी खोजता था।
+बाद में उसने छोटी-छोटी खुशियों की कद्र करना सीखा
+और उसका जीवन पहले से ज्यादा शांत और खुशहाल हो गया।
+</p>
+<div class="lesson">
+🌟 सीख: खुशी छोटी-छोटी चीजों में भी मिल सकती है।
+</div>
+</article>
 
-    <h2>हार मत मानो</h2>
+<!-- STORY 3 -->
+<article class="story" data-category="Confidence">
+<span class="tag">🔥 Confidence</span>
+<h3>मैं कर सकता हूँ</h3>
+<p>
+एक युवक हर सुबह खुद से कहता था,
+“मैं सीख सकता हूँ, मैं मेहनत कर सकता हूँ और
+मैं आगे बढ़ सकता हूँ।” धीरे-धीरे उसकी सोच बदली
+और उसके परिणाम भी बदलने लगे।
+</p>
+<div class="lesson">
+🌟 सीख: सकारात्मक सोच आपकी दिशा बदल सकती है।
+</div>
+</article>
 
-    <p>
-      एक लड़का बार-बार परीक्षा में असफल हो रहा था।
-      उसने हार मानने के बजाय अपनी गलतियों को समझा
-      और रोज थोड़ा-थोड़ा मेहनत करना शुरू किया।
-      कुछ महीनों बाद उसने शानदार सफलता हासिल की।
-    </p>
+<!-- STORY 4 -->
+<article class="story" data-category="Students">
+<span class="tag">🎓 Students</span>
+<h3>छोटे कदम, बड़ी सफलता</h3>
+<p>
+एक विद्यार्थी पढ़ाई को बहुत कठिन समझता था।
+उसने रोज केवल एक घंटे पढ़ने का लक्ष्य बनाया।
+कुछ समय बाद उसकी आदत मजबूत हो गई और
+उसके अंकों में बहुत सुधार आया।
+</p>
+<div class="lesson">
+🌟 सीख: छोटे कदम लगातार उठाने से बड़ी सफलता मिलती है।
+</div>
+</article>
 
-    <div class="lesson">
-      🌟 सीख: मेहनत और लगातार प्रयास से सफलता जरूर मिलती है।
-    </div>
+<!-- STORY 5 -->
+<article class="story" data-category="मेहनत">
+<span class="tag">💪 मेहनत</span>
+<h3>किसान का सपना</h3>
+<p>
+एक किसान ने सूखी जमीन पर मेहनत से खेती शुरू की।
+पहली फसल अच्छी नहीं हुई, लेकिन उसने कोशिश नहीं छोड़ी।
+अगले मौसम में उसने नई तकनीक अपनाई और शानदार फसल उगाई।
+</p>
+<div class="lesson">
+🌟 सीख: असफलता रास्ता रोकती नहीं, रास्ता सिखाती है।
+</div>
+</article>
 
-  </article>
+<!-- STORY 6 -->
+<article class="story" data-category="Students">
+<span class="tag">🎓 Students</span>
+<h3>एक पन्ना रोज</h3>
+<p>
+एक छात्र को किताबें पढ़ना मुश्किल लगता था।
+उसने तय किया कि वह रोज केवल एक पन्ना पढ़ेगा।
+कुछ महीनों में उसने कई किताबें पूरी कर लीं
+और उसका ज्ञान बढ़ गया।
+</p>
+<div class="lesson">
+🌟 सीख: रोज की छोटी आदत बड़ा बदलाव लाती है।
+</div>
+</article>
 
+<!-- STORY 7 -->
+<article class="story" data-category="Life">
+<span class="tag">❤️ Life</span>
+<h3>समय की कीमत</h3>
+<p>
+रवि अपना समय बिना योजना के बिताता था।
+एक दिन उसने पूरे दिन के काम लिखने शुरू किए।
+धीरे-धीरे वह कम समय में ज्यादा काम करने लगा।
+</p>
+<div class="lesson">
+🌟 सीख: समय की सही कीमत समझना जीवन को बेहतर बनाता है।
+</div>
+</article>
 
-  <article class="story" data-category="Life">
+<!-- STORY 8 -->
+<article class="story" data-category="Confidence">
+<span class="tag">🔥 Confidence</span>
+<h3>पहला कदम</h3>
+<p>
+एक लड़की मंच पर बोलने से डरती थी।
+उसने रोज आईने के सामने बोलने का अभ्यास किया।
+कुछ दिनों बाद उसने स्कूल के कार्यक्रम में
+पूरे आत्मविश्वास से भाषण दिया।
+</p>
+<div class="lesson">
+🌟 सीख: डर कम करने का सबसे अच्छा तरीका अभ्यास है।
+</div>
+</article>
 
-    <span class="tag">❤️ Life</span>
+<!-- STORY 9 -->
+<article class="story" data-category="मेहनत">
+<span class="tag">💪 मेहनत</span>
+<h3>मजदूर की लगन</h3>
+<p>
+एक मजदूर हर दिन ईमानदारी से काम करता था।
+उसने अपनी कमाई का थोड़ा हिस्सा बचाया और
+नई कला सीखने में लगाया। कुछ वर्षों बाद उसने
+अपना छोटा व्यवसाय शुरू कर लिया।
+</p>
+<div class="lesson">
+🌟 सीख: मेहनत के साथ सीखते रहना सफलता को मजबूत बनाता है।
+</div>
+</article>
 
-    <h2>खुशी का रहस्य</h2>
+<!-- STORY 10 -->
+<article class="story" data-category="Life">
+<span class="tag">❤️ Life</span>
+<h3>अच्छे शब्द</h3>
+<p>
+एक बुजुर्ग व्यक्ति हर किसी से मुस्कुराकर बात करता था।
+उसके छोटे-छोटे अच्छे शब्द कई लोगों का दिन
+बेहतर बना देते थे।
+</p>
+<div class="lesson">
+🌟 सीख: अच्छे शब्द किसी के जीवन में खुशी ला सकते हैं।
+</div>
+</article>
 
-    <p>
-      एक व्यक्ति हमेशा बड़ी चीजों में खुशी खोजता था।
-      बाद में उसने छोटी-छोटी खुशियों की कद्र करना सीखा
-      और उसका जीवन ज्यादा शांत और खुशहाल हो गया।
-    </p>
+<!-- STORY 11 -->
+<article class="story" data-category="Students">
+<span class="tag">🎓 Students</span>
+<h3>गलती से सीख</h3>
+<p>
+एक छात्र गणित में बार-बार गलती करता था।
+उसने गलत सवालों की एक अलग कॉपी बनाई और
+रोज उन्हें दोहराया। कुछ ही समय में वही सवाल
+उसके लिए आसान हो गए।
+</p>
+<div class="lesson">
+🌟 सीख: गलती को शिक्षक बना लो।
+</div>
+</article>
 
-    <div class="lesson">
-      🌟 सीख: खुशी छोटी-छोटी चीजों में भी मिल सकती है।
-    </div>
+<!-- STORY 12 -->
+<article class="story" data-category="Confidence">
+<span class="tag">🔥 Confidence</span>
+<h3>अपनी तुलना खुद से</h3>
+<p>
+अमन हमेशा दूसरों से अपनी तुलना करता था।
+फिर उसने तय किया कि वह केवल अपने कल से
+बेहतर बनने की कोशिश करेगा। इससे उसका
+आत्मविश्वास बढ़ने लगा।
+</p>
+<div class="lesson">
+🌟 सीख: असली मुकाबला अपने पुराने रूप से है।
+</div>
+</article>
 
-  </article>
+<!-- STORY 13 -->
+<article class="story" data-category="मेहनत">
+<span class="tag">💪 मेहनत</span>
+<h3>पहाड़ और रास्ता</h3>
+<p>
+एक यात्री को सामने बड़ा पहाड़ देखकर डर लगा।
+उसने पहाड़ को एक साथ चढ़ने के बजाय छोटे-छोटे
+हिस्सों में रास्ता तय किया और आखिरकार शिखर तक पहुंच गया।
+</p>
+<div class="lesson">
+🌟 सीख: बड़ी मुश्किल को छोटे हिस्सों में बांट दो।
+</div>
+</article>
 
+<!-- STORY 14 -->
+<article class="story" data-category="Life">
+<span class="tag">❤️ Life</span>
+<h3>माफी की ताकत</h3>
+<p>
+दो दोस्तों में छोटी बात पर झगड़ा हो गया।
+दोनों कई दिनों तक दुखी रहे। आखिर एक ने पहल करके
+माफी मांगी और दोस्ती फिर से मजबूत हो गई।
+</p>
+<div class="lesson">
+🌟 सीख: माफी रिश्तों को फिर से जोड़ सकती है।
+</div>
+</article>
 
-  <article class="story" data-category="Confidence">
+<!-- STORY 15 -->
+<article class="story" data-category="Students">
+<span class="tag">🎓 Students</span>
+<h3>मोबाइल से दूरी</h3>
+<p>
+एक छात्र पढ़ते समय बार-बार मोबाइल देखता था।
+उसने पढ़ाई के समय मोबाइल दूर रखना शुरू किया।
+उसका ध्यान बेहतर हुआ और पढ़ाई जल्दी पूरी होने लगी।
+</p>
+<div class="lesson">
+🌟 सीख: ध्यान बचाओ, समय और सफलता दोनों बचेंगे।
+</div>
+</article>
 
-    <span class="tag">🔥 Confidence</span>
+<!-- STORY 16 -->
+<article class="story" data-category="Confidence">
+<span class="tag">🔥 Confidence</span>
+<h3>एक असफल इंटरव्यू</h3>
+<p>
+सीमा का पहला इंटरव्यू अच्छा नहीं गया।
+उसने निराश होने के बजाय अपनी कमियां लिखीं
+और अभ्यास किया। अगले इंटरव्यू में उसने
+आत्मविश्वास से जवाब दिए।
+</p>
+<div class="lesson">
+🌟 सीख: एक असफल प्रयास आपकी पूरी कहानी नहीं है।
+</div>
+</article>
 
-    <h2>मैं कर सकता हूँ</h2>
+<!-- STORY 17 -->
+<article class="story" data-category="Life">
+<span class="tag">❤️ Life</span>
+<h3>पेड़ का धैर्य</h3>
+<p>
+एक बीज को पेड़ बनने में समय लगता है।
+वह तुरंत फल नहीं देता, लेकिन रोज थोड़ा बढ़ता है।
+इंसान की मेहनत भी ऐसी ही होती है।
+</p>
+<div class="lesson">
+🌟 सीख: अच्छे परिणामों के लिए धैर्य जरूरी है।
+</div>
+</article>
 
-    <p>
-      एक युवक ने हर सुबह खुद से कहा,
-      “मैं सीख सकता हूँ, मैं मेहनत कर सकता हूँ
-      और मैं आगे बढ़ सकता हूँ।”
-      धीरे-धीरे उसकी सोच बदली और उसके परिणाम भी बदलने लगे।
-    </p>
+<!-- STORY 18 -->
+<article class="story" data-category="मेहनत">
+<span class="tag">💪 मेहनत</span>
+<h3>बारिश के बाद सूरज</h3>
+<p>
+एक खिलाड़ी चोट के कारण कई महीनों तक खेल नहीं सका।
+उसने आराम के साथ अभ्यास और फिटनेस पर काम किया।
+वापसी के बाद उसने पहले से बेहतर प्रदर्शन किया।
+</p>
+<div class="lesson">
+🌟 सीख: कठिन समय हमेशा के लिए नहीं रहता।
+</div>
+</article>
 
-    <div class="lesson">
-      🌟 सीख: सकारात्मक सोच आपकी दिशा बदल सकती है।
-    </div>
+<!-- STORY 19 -->
+<article class="story" data-category="Students">
+<span class="tag">🎓 Students</span>
+<h3>लक्ष्य की डायरी</h3>
+<p>
+एक छात्र ने अपनी पढ़ाई के छोटे-छोटे लक्ष्य
+डायरी में लिखने शुरू किए। हर पूरा हुआ लक्ष्य
+उसे आगे बढ़ने की प्रेरणा देता था।
+</p>
+<div class="lesson">
+🌟 सीख: लक्ष्य लिखने से उन्हें पूरा करने की संभावना बढ़ती है।
+</div>
+</article>
 
-  </article>
+<!-- STORY 20 -->
+<article class="story" data-category="Confidence">
+<span class="tag">🔥 Confidence</span>
+<h3>अपनी आवाज पर भरोसा</h3>
+<p>
+एक लड़की को लगता था कि उसकी राय महत्वपूर्ण नहीं है।
+उसने धीरे-धीरे अपनी बात स्पष्ट रूप से रखना शुरू किया।
+लोगों ने उसकी सोच को सम्मान देना शुरू कर दिया।
+</p>
+<div class="lesson">
+🌟 सीख: अपनी बात पर विश्वास रखो।
+</div>
+</article>
 
-
-  <article class="story" data-category="Students">
-
-    <span class="tag">🎓 Students</span>
-
-    <h2>छोटे कदम, बड़ी सफलता</h2>
-
-    <p>
-      एक विद्यार्थी पढ़ाई को बहुत कठिन समझता था।
-      उसने रोज केवल एक घंटे पढ़ने का लक्ष्य बनाया।
-      कुछ समय बाद उसकी आदत मजबूत हो गई और
-      उसके अंकों में भी बहुत सुधार आया।
-    </p>
-
-    <div class="lesson">
-      🌟 सीख: छोटे कदम लगातार उठाते रहें, बड़ी सफलता जरूर मिलेगी।
-    </div>
-
-  </article>
-
-
-  <article class="story" data-category="मेहनत">
-
-    <span class="tag">💪 मेहनत</span>
-
-    <h2>सफलता का रास्ता</h2>
-
-    <p>
-      एक गरीब लड़का अपने सपने को पूरा करना चाहता था।
-      उसके पास ज्यादा साधन नहीं थे, लेकिन उसने मेहनत
-      करना नहीं छोड़ा। हर दिन वह कुछ नया सीखता रहा।
-      आखिरकार उसकी मेहनत रंग लाई।
-    </p>
-
-    <div class="lesson">
-      🌟 सीख: साधन कम हों तो भी मेहनत और सीखना बंद नहीं करना चाहिए।
-    </div>
-
-  </article>
-
-
-  <article class="story" data-category="Life">
-
-    <span class="tag">🌈 Life</span>
-
-    <h2>मुश्किल समय</h2>
-
-    <p>
-      जीवन में एक व्यक्ति के सामने कई परेशानियां आईं।
-      उसने हर समस्या को एक सीख की तरह देखा।
-      समय के साथ वही मुश्किलें उसकी ताकत बन गईं।
-    </p>
-
-    <div class="lesson">
-      🌟 सीख: मुश्किल समय हमें मजबूत बनाता है।
-    </div>
-
-  </article>
-
-
-  <article class="story" data-category="Confidence">
-
-    <span class="tag">🔥 Confidence</span>
-
-    <h2>खुद पर विश्वास</h2>
-
-    <p>
-      एक लड़का दूसरों से अपनी तुलना करके हमेशा निराश रहता था।
-      एक दिन उसने तय किया कि वह अपनी प्रगति पर ध्यान देगा।
-      धीरे-धीरे उसका आत्मविश्वास बढ़ने लगा।
-    </p>
-
-    <div class="lesson">
-      🌟 सीख: खुद पर विश्वास रखें और अपनी यात्रा पर ध्यान दें।
-    </div>
-
-  </article>
+<div id="noResult" class="no-result">
+😔 कोई कहानी नहीं मिली।
+</div>
 
 </div>
-<!-- नई Motivational Stories -->
-
-<article class="story" data-category="मेहनत">
-  <span class="tag">💪 मेहनत</span>
-  <h2>मेहनत कभी बेकार नहीं जाती</h2>
-  <p>
-    एक छोटे से गाँव में रहने वाला रवि पढ़ाई में बहुत कमजोर था।
-    उसके दोस्त अक्सर उसका मजाक उड़ाते थे। लेकिन रवि ने हार नहीं मानी।
-    उसने रोज केवल एक घंटे से शुरुआत की और धीरे-धीरे अपनी पढ़ाई का समय बढ़ाया।
-    कई बार उसे लगा कि उससे नहीं होगा, फिर भी वह अगले दिन दोबारा कोशिश करता रहा।
-    एक साल बाद वही रवि अपनी कक्षा में सबसे अच्छे अंकों से पास हुआ।
-  </p>
-  <div class="lesson">🌟 सीख: लगातार की गई छोटी-छोटी मेहनत एक दिन बड़ी सफलता बन जाती है।</div>
-</article>
-
-<article class="story" data-category="Students">
-  <span class="tag">🎓 Students</span>
-  <h2>आज का एक घंटा</h2>
-  <p>
-    अमन हमेशा कहता था कि उसके पास पढ़ने का समय नहीं है।
-    वह मोबाइल और दोस्तों के साथ अपना बहुत समय बिता देता था।
-    एक दिन उसके शिक्षक ने कहा कि हर दिन सिर्फ एक घंटा ईमानदारी से पढ़कर देखो।
-    अमन ने यह बात मान ली। उसने रोज एक घंटा पढ़ना शुरू किया।
-    कुछ महीनों बाद उसे महसूस हुआ कि मुश्किल विषय भी अब आसान लगने लगे थे।
-  </p>
-  <div class="lesson">🌟 सीख: समय कम नहीं होता, सही इस्तेमाल करने की जरूरत होती है।</div>
-</article>
-
-<article class="story" data-category="Life">
-  <span class="tag">❤️ Life</span>
-  <h2>छोटी खुशी</h2>
-  <p>
-    मोहन हमेशा बड़ी सफलता और बहुत सारे पैसे के पीछे भागता रहता था।
-    उसे लगता था कि खुश होने के लिए बहुत कुछ हासिल करना जरूरी है।
-    एक दिन बारिश में घर लौटते समय उसने देखा कि एक बच्चा कागज की नाव चला रहा था।
-    बच्चे के चेहरे पर छोटी-सी चीज से बहुत बड़ी खुशी थी।
-    उस दिन मोहन को समझ आया कि खुशी हमेशा बड़ी चीजों में नहीं होती।
-  </p>
-  <div class="lesson">🌟 सीख: छोटी-छोटी खुशियों को महसूस करना सीखिए, जिंदगी खूबसूरत लगने लगेगी।</div>
-</article>
-
-<article class="story" data-category="Confidence">
-  <span class="tag">🔥 Confidence</span>
-  <h2>एक कदम आगे</h2>
-  <p>
-    नेहा लोगों के सामने बोलने से बहुत डरती थी।
-    स्कूल में जब भी उसे मंच पर बुलाया जाता, उसका आत्मविश्वास कमजोर पड़ जाता।
-    उसने तय किया कि वह हर दिन आईने के सामने पांच मिनट बोलने की practice करेगी।
-    शुरुआत में उसे बहुत अजीब लगा, लेकिन उसने अभ्यास जारी रखा।
-    कुछ महीनों बाद उसने पूरे स्कूल के सामने भाषण दिया और सभी ने उसकी तारीफ की।
-  </p>
-  <div class="lesson">🌟 सीख: आत्मविश्वास जन्म से नहीं आता, अभ्यास से बनता है।</div>
-</article>
-
-<article class="story" data-category="मेहनत">
-  <span class="tag">💪 मेहनत</span>
-  <h2>गिरकर उठना</h2>
-  <p>
-    एक खिलाड़ी लगातार तीन प्रतियोगिताओं में हार गया।
-    उसके कई साथियों ने कहा कि उसे खेल छोड़ देना चाहिए।
-    लेकिन उसने अपनी गलतियों को समझा और रोज अभ्यास करना शुरू किया।
-    उसने अपनी कमजोरी पर सबसे ज्यादा काम किया।
-    अगली प्रतियोगिता में वह पहले स्थान पर तो नहीं आया,
-    लेकिन उसने पिछली बार से बहुत बेहतर प्रदर्शन किया।
-  </p>
-  <div class="lesson">🌟 सीख: हार अंत नहीं है, वह अगली जीत की तैयारी हो सकती है।</div>
-</article>
-
-<article class="story" data-category="Students">
-  <span class="tag">🎓 Students</span>
-  <h2>गलती से सीख</h2>
-  <p>
-    पूजा परीक्षा में गणित के कई सवाल गलत कर देती थी।
-    वह हर बार अपने नंबर देखकर निराश हो जाती थी।
-    फिर उसने अपनी गलतियों की एक अलग कॉपी बनानी शुरू की।
-    वह हर गलत सवाल को दोबारा हल करती और समझती कि गलती कहाँ हुई।
-    कुछ समय बाद वही सवाल उसके लिए सबसे आसान हो गए।
-  </p>
-  <div class="lesson">🌟 सीख: गलती से डरने के बजाय उससे सीखना सफलता का रास्ता है।</div>
-</article>
-
-<article class="story" data-category="Life">
-  <span class="tag">❤️ Life</span>
-  <h2>सही समय का इंतजार</h2>
-  <p>
-    करण हमेशा सोचता था कि एक दिन सही समय आएगा और वह अपना काम शुरू करेगा।
-    कभी वह पैसे का इंतजार करता, कभी अच्छे मौके का।
-    कई साल ऐसे ही निकल गए।
-    एक दिन उसके पिता ने कहा कि सही समय का इंतजार करते-करते जिंदगी निकल जाती है।
-    करण ने उसी दिन छोटा-सा कदम उठाया और अपने सपने पर काम शुरू कर दिया।
-  </p>
-  <div class="lesson">🌟 सीख: सही समय का इंतजार मत करो, शुरुआत करके समय को सही बनाओ।</div>
-</article>
-
-<article class="story" data-category="Confidence">
-  <span class="tag">🔥 Confidence</span>
-  <h2>लोग क्या कहेंगे?</h2>
-  <p>
-    सीमा अपने हर फैसले से पहले सोचती थी कि लोग क्या कहेंगे।
-    इसी डर के कारण उसने कई अच्छे अवसर छोड़ दिए।
-    एक दिन उसने तय किया कि वह दूसरों की राय से ज्यादा अपनी मेहनत पर भरोसा करेगी।
-    उसने अपने लक्ष्य पर ध्यान देना शुरू किया।
-    धीरे-धीरे उसे समझ आया कि लोग कुछ समय बात करते हैं, लेकिन जिंदगी हमें खुद जीनी होती है।
-  </p>
-  <div class="lesson">🌟 सीख: लोगों की बातें आपकी मंजिल तय नहीं करतीं, आपके फैसले करते हैं।</div>
-</article>
-
-<article class="story" data-category="मेहनत">
-  <span class="tag">💪 मेहनत</span>
-  <h2>धीरे लेकिन लगातार</h2>
-  <p>
-    एक लड़का रोज दौड़ने जाता था, लेकिन वह अपने दोस्तों से बहुत पीछे रहता था।
-    उसने सोचा कि शायद वह कभी तेज नहीं दौड़ पाएगा।
-    फिर उसने दूसरों से तुलना करना बंद कर दिया और अपनी पिछली performance से तुलना शुरू की।
-    हर दिन वह थोड़ा बेहतर करने लगा।
-    कुछ महीनों बाद उसने लंबी दौड़ पूरी की और उसे अपनी मेहनत पर गर्व हुआ।
-  </p>
-  <div class="lesson">🌟 सीख: दूसरों से आगे निकलना जरूरी नहीं, कल से बेहतर बनना जरूरी है।</div>
-</article>
-
-<article class="story" data-category="Life">
-  <span class="tag">❤️ Life</span>
-  <h2>मुश्किल दिन भी गुजर जाते हैं</h2>
-  <p>
-    एक परिवार कठिन समय से गुजर रहा था।
-    घर में पैसों की परेशानी थी और भविष्य को लेकर सभी चिंतित थे।
-    फिर भी परिवार ने एक-दूसरे का साथ नहीं छोड़ा।
-    उन्होंने खर्च कम किए, मेहनत बढ़ाई और उम्मीद बनाए रखी।
-    कुछ समय बाद परिस्थितियां धीरे-धीरे सुधरने लगीं।
-    तब उन्हें समझ आया कि कोई भी मुश्किल हमेशा नहीं रहती।
-  </p>
-  <div class="lesson">🌟 सीख: बुरा समय स्थायी नहीं होता, हिम्मत और धैर्य बनाए रखें।</div>
-</article>
 </main>
 
 <footer>
-  © 2026 Prerna Kahaniyan ❤️
+© 2026 Prerna Kahaniyan ❤️
 </footer>
-
 
 <script>
 
+const stories = document.querySelectorAll(".story");
+const search = document.getElementById("search");
+const noResult = document.getElementById("noResult");
+
 function filterStories(category){
 
-  let stories = document.querySelectorAll(".story");
   let visible = 0;
 
   stories.forEach(function(story){
 
-    if(category === "all" ||
-       story.dataset.category === category){
+    const match =
+      category === "all" ||
+      story.dataset.category === category;
 
-      story.style.display = "block";
+    story.style.display = match ? "block" : "none";
+
+    if(match){
       visible++;
-
-    }else{
-
-      story.style.display = "none";
-
     }
 
   });
 
-  document.getElementById("noResult").style.display =
+  noResult.style.display =
     visible === 0 ? "block" : "none";
 
-  document.getElementById("searchBox").value = "";
-
+  search.value = "";
 }
 
+search.addEventListener("input", function(){
 
-function searchStories(){
+  const text = this.value.toLowerCase().trim();
 
-  let search =
-    document.getElementById("searchBox")
-    .value
-    .toLowerCase()
-    .trim();
-
-  let stories = document.querySelectorAll(".story");
   let visible = 0;
 
   stories.forEach(function(story){
 
-    let text =
-      story.innerText.toLowerCase();
+    const match =
+      story.innerText.toLowerCase().includes(text);
 
-    if(text.includes(search)){
+    story.style.display =
+      match ? "block" : "none";
 
-      story.style.display = "block";
+    if(match){
       visible++;
-
-    }else{
-
-      story.style.display = "none";
-
     }
 
   });
 
-  document.getElementById("noResult").style.display =
+  noResult.style.display =
     visible === 0 ? "block" : "none";
 
-}
+});
 
 </script>
 
